@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit()" [formGroup]="addNoteForm">
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit" [disabled]="!addNoteForm.valid">Save</button>
+          <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              class="form-control"
+              type="text"
+              id="title"
+              formControlName="title"
+            >
+          </div>
+        </div>
+      </div>
+
+
+
+<!--
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="assignee">By</label>
+            <input
+              class="form-control"
+              type="text"
+              id="assignee"
+              formControlName="assignee"
+            >
+          </div>
+        </div>
+      </div>
+-->
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="date">Alarm Date</label>
+            <input
+              class="form-control"
+              type="datetime-local"
+              id="date"
+              formControlName="date"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath" type="f" style="margin: 5px;">Select Image</label>
+
+            <input
+
+              type="file"
+
+              id="imagePath"
+              #file
+              formControlName="imagePath"
+
+              (change)="handleFileInput($event)"> <!--preview(file.files,$event)-->
+
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+
+            <img [src]="url" height="200" *ngIf="url">
+            <!-- [src]="recipe.imagePath" -->
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="details">Text</label>
+            <textarea
+              class="form-control"
+              id="details"
+              rows="6"
+              formControlName="text"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+
+      <hr>
+      <!--
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="button" class="btn btn-success" (click)="onAddIngredient()">Add Ingredient</button>
+        </div>
+      </div>
+      -->
+    </form>
+  </div>
+</div>

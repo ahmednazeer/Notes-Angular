@@ -1,0 +1,60 @@
+<div ><!--*ngIf="isSelected"-->
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="text-center text-info">{{task.title}}</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>{{task.imagePath}}</h3>
+
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+
+        <img
+          class="img-responsive"
+          id="image"
+          [src]="imagePath | safe: 'url'" alt="A Cat"
+        >
+        <!-- [src]="recipe.imagePath" -->
+
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+<div class="row">
+  <div class="col-xs-12">
+    <p>{{task.text}}</p>
+  </div>
+</div>
+
+  <hr/>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h5 class="text-right text-danger">Run at : {{task.date}}</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="OnEditTask()" style="margin: 10px;">Edit Note</button>
+      <button class="btn btn-primary" (click)="OnDeleteTask()" style="margin: 10px;">Delete Note</button>
+    </div>
+  </div>
+
+</div>
+
+
+<!--
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{task.Title}}</h1>
+  </div>
+</div>
+-->
