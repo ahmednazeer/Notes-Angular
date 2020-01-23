@@ -56,8 +56,8 @@ export class AddTaskComponent implements OnInit {
     )
   }
 
-  preview(files,ev) {
-    this.handleFileInput(ev);
+  preview(files) {
+    //this.handleFileInput(ev);
     if (files.length === 0)
       return;
 
@@ -73,10 +73,10 @@ export class AddTaskComponent implements OnInit {
 
     reader.onload = (_event) => {
       this.imgURL = reader.result;
-      /*this.addTaskForm.patchValue(
+      this.addNoteForm.patchValue(
         {
-          'imagePath':ev.target.value
-        });*/
+          'imagePath':this.imagePath
+        });
       console.log(reader.result);
     }
   }
